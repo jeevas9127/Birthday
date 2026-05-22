@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday Sathya ❤️</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&family=Playfair+Display:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      /* MAIN BACKGROUND */
+
+      body {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.8)),
+          url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1800&auto=format&fit=crop');
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        color: white;
+      }
+
+      /* STARS */
+
+      .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 3s infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* FLOATING HEARTS */
+
+      .heart {
+        position: fixed;
+        font-size: 24px;
+        animation: float 8s linear infinite;
+        z-index: 1;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(100vh) rotate(0deg);
+
+          opacity: 1;
+        }
+
+        to {
+          transform: translateY(-120vh) rotate(360deg);
+
+          opacity: 0;
+        }
+      }
+
+      /* FIRST PAGE */
+
+      .first-page {
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+        z-index: 2;
+      }
+
+      /* CARD */
+
+      .card {
+        width: 90%;
+        max-width: 430px;
+
+        padding: 25px;
+
+        border-radius: 30px;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        backdrop-filter: blur(18px);
+
+        box-shadow: 0 0 35px rgba(255, 255, 255, 0.18);
+
+        text-align: center;
+      }
+
+      /* TITLE */
+
+      .title {
+        font-size: 50px;
+
+        font-family: 'Dancing Script', cursive;
+
+        color: #ffd6e0;
+      }
+
+      /* SUBTITLE */
+
+      .subtitle {
+        margin-top: 8px;
+
+        font-size: 16px;
+
+        color: #fff1f2;
+
+        margin-bottom: 18px;
+      }
+
+      /* IMAGE */
+
+      .friend-img {
+        width: 150px;
+        height: 150px;
+
+        margin: auto;
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+        border: 4px solid rgba(255, 255, 255, 0.35);
+
+        box-shadow: 0 0 25px rgba(255, 192, 203, 0.7);
+      }
+
+      .friend-img img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+
+      /* REALISTIC CAKE */
+
+      .cake-area {
+        position: relative;
+
+        width: 220px;
+
+        margin: 20px auto;
+      }
+
+      .real-cake {
+        width: 100%;
+
+        border-radius: 20px;
+
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      /* CANDLE */
+
+      .candle-flame {
+        position: absolute;
+
+        width: 18px;
+        height: 28px;
+
+        background: radial-gradient(circle, #ffe066, #ff7b00);
+
+        border-radius: 50%;
+
+        top: 4px;
+        left: 102px;
+
+        animation: flicker 0.15s infinite;
+
+        box-shadow:
+          0 0 15px yellow,
+          0 0 30px orange;
+      }
+
+      @keyframes flicker {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(0.9);
+        }
+      }
+
+      /* BUTTON */
+
+      button {
+        margin-top: 10px;
+
+        padding: 12px 25px;
+
+        border: none;
+
+        border-radius: 35px;
+
+        background: linear-gradient(45deg, #ff4d6d, #ff8fab);
+
+        color: white;
+
+        font-size: 15px;
+
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition: 0.4s;
+      }
+
+      button:hover {
+        transform: scale(1.08);
+      }
+
+      /* SECOND PAGE */
+
+      .second-page {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition: 1s;
+
+        z-index: 20;
+      }
+
+      /* SHOW SECOND PAGE */
+
+      .second-page.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* SLIDER */
+
+      .bg-slider {
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        z-index: -2;
+      }
+
+      .bg-slider img {
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        opacity: 0;
+
+        animation: slideShow 6s infinite;
+      }
+
+      .bg-slider img:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .bg-slider img:nth-child(2) {
+        animation-delay: 2s;
+      }
+
+      .bg-slider img:nth-child(3) {
+        animation-delay: 4s;
+      }
+
+      @keyframes slideShow {
+        0% {
+          opacity: 0;
+          transform: scale(1);
+        }
+
+        10% {
+          opacity: 1;
+        }
+
+        30% {
+          opacity: 1;
+          transform: scale(1.08);
+        }
+
+        40% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* DARK OVERLAY */
+
+      .second-page::before {
+        content: '';
+
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.55);
+
+        z-index: -1;
+      }
+
+      /* MESSAGE BOX */
+
+      .message-box {
+        width: 85%;
+        max-width: 650px;
+
+        padding: 35px;
+
+        border-radius: 30px;
+
+        background: rgba(255, 255, 255, 0.13);
+
+        backdrop-filter: blur(18px);
+
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.25);
+
+        transform: scale(0.3);
+
+        opacity: 0;
+
+        transition: 1s;
+      }
+
+      /* POPUP EFFECT */
+
+      .second-page.show .message-box {
+        transform: scale(1);
+
+        opacity: 1;
+      }
+
+      /* MESSAGE */
+
+      .message {
+        font-size: 16px;
+
+        line-height: 2;
+
+        color: white;
+
+        text-align: justify;
+
+        font-family: 'Playfair Display', serif;
+      }
+
+      /* WORD EFFECT */
+
+      .word {
+        opacity: 0;
+
+        display: inline-block;
+
+        animation: showWord 0.5s forwards;
+      }
+
+      @keyframes showWord {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* CONFETTI */
+
+      .paper {
+        position: fixed;
+
+        width: 10px;
+        height: 10px;
+
+        top: 50%;
+        left: 50%;
+
+        animation: blast 5s linear forwards;
+      }
+
+      @keyframes blast {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+
+          opacity: 1;
+        }
+
+        100% {
+          transform: translate(var(--x), var(--y)) rotate(720deg);
+
+          opacity: 0;
+        }
+      }
+
+      /* EMOJI RAIN */
+
+      .emoji {
+        position: fixed;
+
+        bottom: -50px;
+
+        font-size: 28px;
+
+        animation: emojiFly linear forwards;
+
+        z-index: 50;
+      }
+
+      @keyframes emojiFly {
+        0% {
+          transform: translateY(0) rotate(0deg);
+
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(-120vh) rotate(360deg);
+
+          opacity: 0;
+        }
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 768px) {
+        .title {
+          font-size: 38px;
+        }
+
+        .friend-img {
+          width: 120px;
+          height: 120px;
+        }
+
+        .cake-area {
+          width: 180px;
+        }
+
+        .candle-flame {
+          left: 82px;
+        }
+
+        .message {
+          font-size: 13px;
+          line-height: 1.8;
+        }
+
+        .message-box {
+          width: 92%;
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- STARS -->
+
+    <div class="stars" id="stars"></div>
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart" style="left: 10%">💖</div>
+    <div class="heart" style="left: 25%">✨</div>
+    <div class="heart" style="left: 40%">💞</div>
+    <div class="heart" style="left: 55%">🌸</div>
+    <div class="heart" style="left: 70%">🎉</div>
+    <div class="heart" style="left: 85%">💕</div>
+
+    <!-- FIRST PAGE -->
+
+    <div class="first-page">
+      <div class="card">
+        <div class="title">Happy Birthday</div>
+
+        <div class="subtitle">My Best Friend Sathya ❤️</div>
+
+        <!-- IMAGE -->
+
+        <div class="friend-img">
+          <img src="bir.jpeg" />
+        </div>
+
+        <!-- CAKE -->
+
+        <div class="cake-area">
+          <img
+            class="real-cake"
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop"
+          />
+
+          <div class="candle-flame" id="flame"></div>
+        </div>
+
+        <!-- BUTTON -->
+
+        <button onclick="celebrate()">Blow Candle 🕯️</button>
+      </div>
+    </div>
+
+    <!-- SECOND PAGE -->
+
+    <div class="second-page" id="secondPage">
+      <!-- BACKGROUND SLIDER -->
+
+      <div class="bg-slider">
+        <img src="b.jpeg" />
+        <img src="bi.jpeg" />
+        <img src="bir.jpeg" />
+      </div>
+
+      <!-- MESSAGE BOX -->
+
+      <div class="message-box">
+        <div class="message" id="messageText"></div>
+      </div>
+    </div>
+
+    <!-- MUSIC -->
+
+    <audio id="music">
+      <source src="kannaana.mp3" type="audio/mpeg" />
+    </audio>
+    <script>
+      /* STARS */
+
+      for (let i = 0; i < 150; i++) {
+        let star = document.createElement('div');
+
+        star.classList.add('star');
+
+        star.style.left = Math.random() * 100 + '%';
+
+        star.style.top = Math.random() * 100 + '%';
+
+        document.getElementById('stars').appendChild(star);
+      }
+
+      /* CELEBRATE */
+
+      function celebrate() {
+        /* REMOVE FLAME */
+
+        document.getElementById('flame').style.display = 'none';
+
+        /* PLAY MUSIC */
+
+        const music = document.getElementById('music');
+
+        music.volume = 1;
+
+        music.play();
+
+        /* MASSIVE CONFETTI */
+
+        paperBlast();
+
+        /* EMOJI RAIN */
+
+        emojiRain();
+
+        /* OPEN SECOND PAGE */
+
+        setTimeout(() => {
+          document.getElementById('secondPage').classList.add('show');
+
+          showParagraph();
+        }, 1200);
+      }
+
+      /* 4000 CONFETTI */
+
+      function paperBlast() {
+        for (let i = 0; i < 4000; i++) {
+          let paper = document.createElement('div');
+
+          paper.classList.add('paper');
+
+          paper.style.background = `hsl(${Math.random() * 360},100%,70%)`;
+
+          paper.style.width = Math.random() * 12 + 6 + 'px';
+
+          paper.style.height = paper.style.width;
+
+          paper.style.setProperty('--x', Math.random() * 2500 - 1250 + 'px');
+
+          paper.style.setProperty('--y', Math.random() * 1800 - 900 + 'px');
+
+          document.body.appendChild(paper);
+
+          setTimeout(() => {
+            paper.remove();
+          }, 5000);
+        }
+      }
+
+      /* EMOJI RAIN */
+
+      function emojiRain() {
+        const emojis = [
+          '💖',
+          '💞',
+          '💕',
+          '❤️',
+          '🌸',
+          '🥳',
+          '🎂',
+          '✨',
+          '🎉',
+          '💗',
+          '💝',
+          '😍',
+          '🌹',
+          '🎊',
+          '🥰',
+          '💖',
+          '💞',
+          '💕',
+          '❤️',
+          '🌸',
+          '🥳',
+          '🎂',
+          '✨',
+          '🎉',
+          '💗',
+        ];
+
+        setInterval(() => {
+          for (let i = 0; i < 10; i++) {
+            let emoji = document.createElement('div');
+
+            emoji.classList.add('emoji');
+
+            emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+            emoji.style.left = Math.random() * 100 + '%';
+
+            emoji.style.animationDuration = Math.random() * 5 + 4 + 's';
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+              emoji.remove();
+            }, 9000);
+          }
+        }, 250);
+      }
+
+      /* MESSAGE */
+
+      function showParagraph() {
+        let textContainer = document.getElementById('messageText');
+
+        let text = `
+
+Happy Birthday to the most precious person in my life, Sathya ❤️✨ From the day you entered my life, everything became more beautiful and meaningful 🌸💖. You are not just my girl best friend; you are the person who understands even my silence 🥹🤍. Your smile has the power to remove all my stress and instantly brighten my day 😊💫. Every memory we have created together has become one of the happiest parts of my life 📸💞. Thank you for always supporting me, caring for me, and standing beside me in every situation 🤝💗. I feel truly lucky and grateful to have someone as special as you in my life 🍀❤️. Your kindness, your heart, and your beautiful soul make you different from everyone else 🌷✨. Whenever I feel low, talking with you gives me peace and happiness again 💫🥰. I wish your life is always filled with success, laughter, love, and endless happiness 🎉🌹💐. May all your dreams come true and may you achieve everything you truly deserve ⭐🎂. Never stop smiling because your smile is honestly one of the most beautiful things in this world 😄💝. No matter what happens in life, our friendship will always remain special to me forever 🤞💖. Today is your special day, so forget all your worries and enjoy every single second happily 🎊🥳. Once again Happy Birthday Sathya 💖✨ You will always be one of the most important people in my life 🌍💕.
+
+`;
+
+        let words = text.split(' ');
+
+        textContainer.innerHTML = '';
+
+        words.forEach((word, index) => {
+          let span = document.createElement('span');
+
+          span.classList.add('word');
+
+          span.style.animationDelay = `${index * 0.05}s`;
+
+          span.innerHTML = word + '&nbsp;';
+
+          textContainer.appendChild(span);
+        });
+      }
+    </script>
+  </body>
+</html>
